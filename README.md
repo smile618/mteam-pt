@@ -9,15 +9,17 @@
 - Node.js >= 18（建议 20+）
 
 ## 配置
-复制环境变量示例：
+通过环境变量配置：
 
-```bash
-cp .env.example .env
-```
-
-编辑 `.env`：
 - `MTEAM_API_KEY`：你的 API Key（通过 `x-api-key` 头传递）
 - `DOWNLOAD_DIR`：保存 `.torrent` 的目录（默认 `./downloads`）
+
+示例：
+
+```bash
+export MTEAM_API_KEY="your_api_key"
+export DOWNLOAD_DIR="./downloads"
+```
 
 ## 用法
 
