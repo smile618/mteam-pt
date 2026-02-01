@@ -80,14 +80,10 @@ function printTorrents(torrents, { limit = 5 } = {}) {
     // Keep list items scannable: prefer the primary (often CN) title only.
     // Many M-Team names include multiple aliases separated by '/'.
     const title = String(ui.title).split('/')[0].trim();
-    const meta = [ui.createdAt, ui.size, ui.rating].filter(Boolean).join(' | ');
-    const tags = ui.tags.length ? ui.tags.join(', ') : '-';
-    const stats = `S:${ui.seeders}  L:${ui.leechers}  Done:${ui.completed}`;
+    const stats = `${ui.size} | S:${ui.seeders} Done:${ui.completed}`;
 
     console.log(`${idx}) ${title}`);
-    console.log(`   ${meta}`);
-    console.log(`   ${stats}${badge ? ' | ' + badge : ''}`);
-    console.log(`   Tags: ${tags}`);
+    console.log(`   ${stats}${badge ? ' | 🏷️ ' + badge : ''}`);
     if (i !== Math.min(limit, ranked.length) - 1) console.log('');
   }
 }
